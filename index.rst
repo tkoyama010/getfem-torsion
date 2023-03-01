@@ -7,10 +7,16 @@
    :maxdepth: 2
 
 あいうえお
+あいうえお
 
-.. tikz::
+.. tikz:: abcd
    :include: example.tikz
-   :align: right
+
+.. tikz:: abcd2
+   :include: example2.tikz
+
+.. tikz:: abcd3
+   :include: example3.tikz
 
 ..
    Indices and tables
