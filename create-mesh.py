@@ -11,53 +11,33 @@ L = 500.0  # mm
 
 mesh = gf.Mesh("empty", 3)
 
+phis = np.linspace(0.0, 2.0 * np.pi, 16 + 1)
 zs = np.linspace(0.0, L, 25 + 1)
 
 for i, z in enumerate(zs[1:]):
-    mesh.add_convex(
-        gf.GeoTrans("GT_PRISM(3,1)"),
-        [
+    for j, phi in enumerate(phis[1:]):
+        mesh.add_convex(
+            gf.GeoTrans("GT_PRISM(3,1)"),
             [
-                0,
-                d / 16 * np.cos(np.pi / 8 * 0),
-                d / 16 * np.cos(np.pi / 8 * 1),
-                0,
-                d / 16 * np.cos(np.pi / 8 * 0),
-                d / 16 * np.cos(np.pi / 8 * 1),
+                [
+                    0,
+                    d / 16 * np.cos(phis[j]),
+                    d / 16 * np.cos(phi),
+                    0,
+                    d / 16 * np.cos(phis[j]),
+                    d / 16 * np.cos(phi),
+                ],
+                [
+                    0,
+                    d / 16 * np.sin(phis[j]),
+                    d / 16 * np.sin(phi),
+                    0,
+                    d / 16 * np.sin(phis[j]),
+                    d / 16 * np.sin(phi),
+                ],
+                [zs[i], zs[i], zs[i], z, z, z],
             ],
-            [
-                0,
-                d / 16 * np.sin(np.pi / 8 * 0),
-                d / 16 * np.sin(np.pi / 8 * 1),
-                0,
-                d / 16 * np.sin(np.pi / 8 * 0),
-                d / 16 * np.sin(np.pi / 8 * 1),
-            ],
-            [zs[i], zs[i], zs[i], z, z, z],
-        ],
-    )
-    mesh.add_convex(
-        gf.GeoTrans("GT_PRISM(3,1)"),
-        [
-            [
-                0,
-                d / 16 * np.cos(np.pi / 8 * 1),
-                d / 16 * np.cos(np.pi / 8 * 2),
-                0,
-                d / 16 * np.cos(np.pi / 8 * 1),
-                d / 16 * np.cos(np.pi / 8 * 2),
-            ],
-            [
-                0,
-                d / 16 * np.sin(np.pi / 8 * 1),
-                d / 16 * np.sin(np.pi / 8 * 2),
-                0,
-                d / 16 * np.sin(np.pi / 8 * 1),
-                d / 16 * np.sin(np.pi / 8 * 2),
-            ],
-            [zs[i], zs[i], zs[i], z, z, z],
-        ],
-    )
+        )
 
 mesh.export_to_vtk("mesh.vtk", "ascii")
 
