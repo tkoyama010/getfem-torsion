@@ -21,21 +21,47 @@ for i, z in enumerate(zs[1:]):
             [
                 [
                     0,
-                    d / 16 * np.cos(phis[j]),
-                    d / 16 * np.cos(phi),
+                    d / 16 * 1 * np.cos(phis[j]),
+                    d / 16 * 1 * np.cos(phi),
                     0,
-                    d / 16 * np.cos(phis[j]),
-                    d / 16 * np.cos(phi),
+                    d / 16 * 1 * np.cos(phis[j]),
+                    d / 16 * 1 * np.cos(phi),
                 ],
                 [
                     0,
-                    d / 16 * np.sin(phis[j]),
-                    d / 16 * np.sin(phi),
+                    d / 16 * 1 * np.sin(phis[j]),
+                    d / 16 * 1 * np.sin(phi),
                     0,
-                    d / 16 * np.sin(phis[j]),
-                    d / 16 * np.sin(phi),
+                    d / 16 * 1 * np.sin(phis[j]),
+                    d / 16 * 1 * np.sin(phi),
                 ],
                 [zs[i], zs[i], zs[i], z, z, z],
+            ],
+        )
+        mesh.add_convex(
+            gf.GeoTrans("GT_QK(3,1)"),
+            [
+                [
+                    d / 16 * 1 * np.cos(phis[j]),
+                    d / 16 * 1 * np.cos(phi),
+                    d / 16 * 2 * np.cos(phis[j]),
+                    d / 16 * 2 * np.cos(phi),
+                    d / 16 * 1 * np.cos(phis[j]),
+                    d / 16 * 1 * np.cos(phi),
+                    d / 16 * 2 * np.cos(phis[j]),
+                    d / 16 * 2 * np.cos(phi),
+                ],
+                [
+                    d / 16 * 1 * np.sin(phis[j]),
+                    d / 16 * 1 * np.sin(phi),
+                    d / 16 * 2 * np.sin(phis[j]),
+                    d / 16 * 2 * np.sin(phi),
+                    d / 16 * 1 * np.sin(phis[j]),
+                    d / 16 * 1 * np.sin(phi),
+                    d / 16 * 2 * np.sin(phis[j]),
+                    d / 16 * 2 * np.sin(phi),
+                ],
+                [zs[i], zs[i], zs[i], zs[i], z, z, z, z],
             ],
         )
 
