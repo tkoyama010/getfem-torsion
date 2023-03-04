@@ -11,9 +11,9 @@ L = 500.0  # mm
 
 mesh = gf.Mesh("empty", 3)
 
-heights = np.linspace(0.0, L, 25 + 1)
+zs = np.linspace(0.0, L, 25 + 1)
 
-for i, height in enumerate(heights[1:]):
+for i, z in enumerate(zs[1:]):
     mesh.add_convex(
         gf.GeoTrans("GT_PRISM(3,1)"),
         [
@@ -33,7 +33,7 @@ for i, height in enumerate(heights[1:]):
                 d / 16 * np.sin(np.pi / 8 * 0),
                 d / 16 * np.sin(np.pi / 8 * 1),
             ],
-            [heights[i], heights[i], heights[i], height, height, height],
+            [zs[i], zs[i], zs[i], z, z, z],
         ],
     )
     mesh.add_convex(
@@ -55,7 +55,7 @@ for i, height in enumerate(heights[1:]):
                 d / 16 * np.sin(np.pi / 8 * 1),
                 d / 16 * np.sin(np.pi / 8 * 2),
             ],
-            [heights[i], heights[i], heights[i], height, height, height],
+            [zs[i], zs[i], zs[i], z, z, z],
         ],
     )
 
