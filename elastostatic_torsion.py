@@ -1,6 +1,12 @@
 import getfem as gf
 
 ###############################################################################
+# Numerical parameters
+
+# Degree of the finite element methods
+elements_degree = 1
+
+###############################################################################
 # Load mesh
 
 mesh = gf.Mesh("load", "mesh.msh")
