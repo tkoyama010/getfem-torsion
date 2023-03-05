@@ -22,3 +22,13 @@ BOTTOM_BOUND = 2
 
 mesh.set_region(TOP_BOUND, fb1)
 mesh.set_region(BOTTOM_BOUND, fb2)
+
+###############################################################################
+# Definition of finite elements methods and integration method
+
+# Finite element for the elastic displacement
+mfu = gf.MeshFem(mesh, 3)
+mfu.set_classical_fem(elements_degree)
+
+# Integration method
+mim = gf.MeshIm(mesh, elements_degree * 2)
