@@ -1,6 +1,15 @@
 import getfem as gf
 
 ###############################################################################
+# Physical parameters
+
+# Young Modulus (N/m2)
+E = 200.0e9
+
+# Poisson ratio
+nu = 0.3
+
+###############################################################################
 # Numerical parameters
 
 # Degree of the finite element methods
