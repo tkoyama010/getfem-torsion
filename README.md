@@ -2,7 +2,6 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 conda install getfem
 conda create -n myenv
-/opt/conda/bin/python
 conda install getfem
 conda install getfem --channel conda-forge
 conda install scipy --channel conda-forge
@@ -10,7 +9,6 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 conda install getfem
 conda update -n base -c defaults conda
-$ conda install scipy --channel conda-forge
 conda install scipy --channel conda-forge
 conda install -c conda-forge ffmpeg
 conda search scipy
@@ -25,6 +23,4 @@ conda init bash
 sudo conda init bash
 conda install scipy
 conda install getfem
-conda run python3
-python3
 /opt/conda/bin/python
