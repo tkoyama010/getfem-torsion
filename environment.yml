@@ -1,4 +1,4 @@
-name: getfem-doc-translations
+name: getfem-torsion
 channels:
   - conda-forge
   - defaults
