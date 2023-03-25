@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'getfem-twist'
+project = 'getfem-torsion'
 copyright = '2023, Tetsuo Koyama'
 author = 'Tetsuo Koyama'
 release = '0.1'
