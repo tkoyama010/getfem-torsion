@@ -1,0 +1,16 @@
+\fill[black! 20](0,2) rectangle(6,2.5);
+\draw (0,2)--(6,2);
+
+\draw (2,2)--(2,1.9);
+\draw[decorate,decoration={coil,amplitude=9pt}] (2,1.9) -- (2,-0.1);
+
+\draw (0,-0.2) rectangle(6,-0.1);
+\draw (2,-0.2) node[below]{O};
+\draw (0,-0.1) node[above]{A};
+\draw (6,-0.1) node[above]{B};
+
+\draw (-0.6,-1.6) rectangle(0.6,-1);
+\draw (0,-0.2)--(0,-1);
+
+\draw (5.6,-1.6) rectangle(6.4,-1);
+\draw (6,-0.2)--(6,-1);
